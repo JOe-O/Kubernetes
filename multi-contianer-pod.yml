@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+spec:
+  containers:
+    - name: nginx1
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+    - name: nginx2 #this one will not work because the first container will bind to port 80 first 
+      image: nginx:latest
+      ports:
+        - containerPort: 80
